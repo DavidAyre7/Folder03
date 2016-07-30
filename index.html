@@ -72,8 +72,30 @@
         console.log(cart);
 
         // Extra code to convert cart to order
-        console.log('A5i');
-        var order = moltin.Cart.Complete({gateway: 'dummy'});
+        console.log('A5j');
+        //var order = moltin.Cart.Complete({gateway: 'dummy'});
+        var order = moltin.Cart.Complete({
+          gateway: 'dummy',
+          customer: {
+            first_name: 'David',
+            last_name:  'Ayre',
+            email:      'david.ayre7@gmail.com'
+          },
+          bill_to: {
+            first_name: 'David',
+            last_name:  'Ayre',
+            address_1:  '252 Nile Street',
+            address_2:  'Maitai',
+            city:       'Nelson',
+            county:     'Nelson',
+            country:    'NZ',
+            postcode:   '7010',
+            phone:      '006435456169'
+          },
+          ship_to: 'bill_to',
+          shipping: '1305214549095350548'
+        });
+        console.log(order);
 
         // Extra code to process payment
         console.log('A6');
