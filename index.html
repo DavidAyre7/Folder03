@@ -72,8 +72,12 @@
         console.log(cart);
 
         // Extra code to convert cart to order
-        console.log('A5e');
-        var order = moltin.Cart.Complete({gateway: 'dummy'});
+        console.log('A5f');
+        //var order = moltin.Cart.Complete({gateway: 'dummy'});
+        moltin.Cart.Complete(['gateway' => 'dummy'], function(order) {
+          console.log('A5 sidetrack a');
+          console.log(order);
+        });
 
         // Extra code to process payment
         console.log('A6');
