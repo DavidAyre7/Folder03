@@ -51,7 +51,9 @@
 
         // Extra code to retrieve information for "Test Prduct 1"
         console.log('A1');
-        var product = moltin.product.find({slug: 'test-product1-slug'});
+        // Original code was var product = moltin.product.find({slug: 'test-product1-slug'});
+        // Changed to :
+        var product = moltin.product[0].find({slug: 'test-product1-slug'});
 
         // Extra code to add that product to the cart
         console.log('A2');
