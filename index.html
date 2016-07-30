@@ -57,11 +57,14 @@
 
         // Extra code to add that product to the cart
         console.log('A2');
-        var item = moltin.cart.insert(product.id, 1, null);
+        var item = moltin.cart.Insert(product.id, 1, null);
 
         // Extra code to add that product to the cart a second time, giving a cart with two items
         console.log('A3');
-        var item = moltin.cart.insert(product.id, 1, null);
+        var item = moltin.cart.Insert(product.id, 1, null);
+
+        console.log('moltin structure');
+        console.log(moltin);
 
         // Extra code to get cart contents
         console.log('A4');
