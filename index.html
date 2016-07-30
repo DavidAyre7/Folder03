@@ -57,15 +57,7 @@
 
         // Extra code to add that product to the cart
         console.log('A2');
-        console.log(product);
-        console.log(product['id']);
-        console.log('A2a');
-        idx = product[0].id;
-        console.log(idx);
-        console.log('A2b');
-        console.log(42);
-
-        var item = moltin.Cart.Insert(product['id'], 1, null);
+        var item = moltin.Cart.Insert(product[0].id, 1, null);
 
         // Extra code to add that product to the cart a second time, giving a cart with two items
         console.log('A3');
