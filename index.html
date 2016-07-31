@@ -69,7 +69,7 @@
         console.log(cart);
 
         // Extra code to convert cart to order
-        console.log('A5j');
+        console.log('A5k');
         //var order = moltin.Cart.Complete({gateway: 'dummy'});
         var order = moltin.Cart.Complete({
           gateway: 'dummy',
@@ -90,7 +90,13 @@
             phone:      '006435456169'
           },
           ship_to: 'bill_to',
-          shipping: '1305214549095350548'
+          shipping: 'free_shipping'
+          }, function(order) {
+            // Handle the order
+            console.log('Z1');
+          }, function(error) {
+            // Something went wrong...
+            console.log('Z2');
         });
         console.log(order);
 
