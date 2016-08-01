@@ -48,8 +48,12 @@
         var item = moltin.Cart.Insert(product[0].id, 1, null);
 
         // Get cart contents
-        console.log('A4');
+        console.log('A3');
         var cart = moltin.Cart.Contents();
+
+        // Display cart id and contents
+        console.log('A4');
+        alert(moltin.Cart.id);
 
         // Convert cart to order
         console.log('A5');
