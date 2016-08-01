@@ -47,22 +47,16 @@
         var item = moltin.Cart.Insert(product[0].id, 1, null);
         var item = moltin.Cart.Insert(product[0].id, 1, null);
 
-        // Get cart contents
+        // Display cart id
         console.log('A3');
+        console.log(moltin.Cart);
+        alert(moltin.Cart['cartId']);
+
+        // Display total items in cart
+        console.log('A4');
         var cart = moltin.Cart.Contents();
         console.log(cart);
-        console.log('Total items in cart : '+cart.total_items);
-
-        // Display cart id and contents
-        console.log('A4i');
-        console.log(moltin.Cart['cartId']);
-        //console.log('A4g2b');
-        //for(a in moltin.Cart){
-        //  console.log('A4g3b');
-        //  console.log(a);
-        //  console.log(moltin.Cart[a]);
-        //}
-        //console.log(moltin.Cart.a.cartId);
+        alert('Total items in cart : '+cart.total_items);
 
         // Convert cart to order
         console.log('A5');
