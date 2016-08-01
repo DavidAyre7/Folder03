@@ -16,7 +16,7 @@
 
     <div id="main">
       <div class="ready">
-        <h1>First Moltin webpage!</h1>
+        <h1>Simple Moltin webpage</h1>
         <p>This page shows some of the API calls to the Moltin API</p>
       </div>
     </div>
@@ -38,14 +38,10 @@
 
         // Retrieve information for "Test Prduct 1"
         console.log('A1');
-        // Original code was var product = moltin.product.find({slug: 'test-product1-slug'});
-        // Changed to :
         var product = moltin.Product.Find({slug: 'test-product1-slug'});
 
-        // Add that product to the cart twice
-        console.log('A2c');
-        console.log(product[0].id);
-        var item = moltin.Cart.Insert(product[0].id, 1, null);
+        // Add that product to the cart
+        console.log('A2');
         var item = moltin.Cart.Insert(product[0].id, 1, null);
 
         // Display cart id
