@@ -51,12 +51,12 @@
         console.log('A3');
         var cart = moltin.Cart.Contents();
         console.log(cart);
-        alert('Total items in cart : '+cart.total_items);
+        console.log('Total items in cart : '+cart.total_items);
 
         // Display cart id and contents
-        console.log('A4c');
-        console.log(moltin.Cart);
-        console.log(moltin.Cart.a.cartId);
+        console.log('A4d');
+        console.dir(moltin.Cart);
+        //console.log(moltin.Cart.a.cartId);
 
         // Convert cart to order
         console.log('A5');
