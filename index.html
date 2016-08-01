@@ -43,8 +43,8 @@
         var product = moltin.Product.Find({slug: 'test-product1-slug'});
 
         // Add that product to the cart twice
-        console.log('A2a');
-        var item = moltin.Cart.Insert(product.id, 1, null);
+        console.log('A2b');
+        var item = moltin.Cart.Insert(product[0].id, 1, null);
         var item = moltin.Cart.Insert(product[0].id, 1, null);
 
         // Display cart id
