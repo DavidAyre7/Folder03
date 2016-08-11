@@ -80,8 +80,13 @@
         });
         console.log(order);
 
-        // Process payment
+        // Clear cart
         console.log('A6');
+        var deletex = moltin.Checkout.Delete();
+        console.log(deletex);
+
+        // Process payment
+        console.log('A7');
         var checkout = moltin.Checkout.Payment('purchase', order.id, {
           data: {
             number:       '4242424242424242',
@@ -91,8 +96,8 @@
           }
         });
 
-        console.log('A7a');
-        alert('End of Moltin order');
+        console.log('A8');
+        alert('End of Moltin order - Version 01');
 
       });
 
