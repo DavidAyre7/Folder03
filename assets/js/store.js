@@ -87,17 +87,17 @@ function checkoutMain(){
     shipping: 'free-shipping'
   });
   /*clear the cart*/
-  // moltin.Cart.Delete();
-  // /*add payment info to order*/
-  // var checkout = moltin.Checkout.Payment('purchase', order.id, {
-  //   data: {
-  //     number:       '4242424242424242',
-  //     expiry_month: '02',
-  //     expiry_year:  '2017',
-  //     cvv:          '123'
-  //   }
-  // });
-  // alert("End of checkoutMain");
+  moltin.Cart.Delete();
+  /*add payment info to order*/
+  var checkout = moltin.Checkout.Payment('purchase', order.id, {
+    data: {
+      number:       '4242424242424242',
+      expiry_month: '02',
+      expiry_year:  '2017',
+      cvv:          '123'
+    }
+  });
+  alert("End of checkoutMain");
 }
 
 
