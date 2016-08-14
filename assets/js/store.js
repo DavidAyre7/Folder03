@@ -96,7 +96,7 @@ function checkoutMain(){
       cvv:          '123'
     }
   });
-  alert("Checkout");
+  alert("End of checkoutMain");
 }
 
 
