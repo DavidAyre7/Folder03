@@ -68,8 +68,8 @@ function checkoutMain(){
   var order = moltin.Cart.Complete({
     gateway: 'dummy',
     customer: {
-      first_name: $("#firstname").val();,
-      last_name:  $("#secondname").val();,
+      first_name: $("#firstname").val(),
+      last_name:  $("#secondname").val(),
       email:      $("#email").val()
     },
     bill_to: {
