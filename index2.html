@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>My Moltin App</title>
+    <meta name="description" content="My Moltin App">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://js.moltin.com/v1"></script>
+  </head>
+
+  <body>
+
+    <div id="main">
+      <div class="ready">
+        <h1>Simple Moltin webpage</h1>
+        <p>This page shows some of the API calls to the Moltin API</p>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      var moltin = new Moltin({publicId: 'BXck1jw7RSRzciM80JBTfYa0KHXv5W5NTV4gb2D94A',
+        notice: function(type, msg){
+          $('<div class="'+type+'">'+msg+'</div>').prependTo($('body'));
+        }
+      });
+      moltin.Authenticate(function() {
+        $('<div class="success">Authentication successful</div>').prependTo($('body'));
+        $('.ready').show();
+
+        // List all live products
+        moltin.Product.Search({status: 1}, function(products) {
+          console.log(products);
+        });
+
+        // Retrieve information for "Test Prduct 1"
+        console.log('A1');
+        var product = moltin.Product.Find({slug: 'test-product1-slug'});
+
+        // Add that product to the cart
+        console.log('A2');
+        var item = moltin.Cart.Insert(product[0].id, 1, null);
+
+        // Display cart id
+        console.log('A3');
+        console.log(moltin.Cart);
+        alert('Cart ID : '+moltin.Cart['cartId']);
+
+        // Display total items in cart
+        console.log('A4');
+        var cart = moltin.Cart.Contents();
+        console.log(cart);
+        alert('Total items in cart : '+cart.total_items);
+
+        // Convert cart to order
+        // console.log('A5');
+        // var lcaddress1 = "252x Nile Street"
+        // var order = moltin.Cart.Complete({
+        //   gateway: 'dummy',
+        //   customer: {
+        //     first_name: 'David',
+        //     last_name:  'Ayre',
+        //     email:      'david.ayre7@gmail.com'
+        //   },
+        //   bill_to: {
+        //     first_name: 'Davidx',
+        //     last_name:  'Ayrex',
+        //     address_1:  lcaddress1,
+        //     address_2:  'Maitai',
+        //     city:       'Nelson',
+        //     county:     'Nelson',
+        //     country:    'NZ',
+        //     postcode:   '7010',
+        //     phone:      '006435456169'
+        //   },
+        //   ship_to: 'bill_to',
+        //   shipping: 'free-shipping'
+        // });
+        // console.log(order);
+
+        // // Clear cart
+        // console.log('A6');
+        // moltin.Cart.Delete();
+
+        // // Process payment
+        // console.log('A7');
+        // var checkout = moltin.Checkout.Payment('purchase', order.id, {
+        //   data: {
+        //     number:       '4242424242424242',
+        //     expiry_month: '02',
+        //     expiry_year:  '2017',
+        //     cvv:          '123'
+        //   }
+        // });
+
+        // console.log('A8');
+        // alert('End of Moltin order and payment');
+
+      });
+
+    </script>
+  </body>
+</html>
