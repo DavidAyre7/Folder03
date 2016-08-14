@@ -62,47 +62,40 @@ function checkout(){
   });
 }
 function checkoutMain(){
-  alert("Checkout - Try to access fields 1 and 2");
-  lcName = $("#firstname").val();
-  alert(lcName);
-  console.log($("#test123").serialize());
-
-
-
-  // /*convert cart to order*/
-  // var order = moltin.Cart.Complete({
-  //   gateway: 'dummy',
-  //   customer: {
-  //     first_name: 'David',
-  //     last_name:  'Ayre',
-  //     email:      'david.ayre7@gmail.com'
-  //   },
-  //   bill_to: {
-  //     first_name: 'David',
-  //     last_name:  'Ayre',
-  //     address_1:  '252 Nile Street',
-  //     address_2:  '',
-  //     city:       'Nelson',
-  //     county:     '',
-  //     country:    'NZ',
-  //     postcode:   '7010',
-  //     phone:      '+64-3-545-6169'
-  //   },
-  //   ship_to: 'bill_to',
-  //   shipping: 'free-shipping'
-  // });
-  // /*clear the cart*/
-  // moltin.Cart.Delete();
-  // /*add payment info to order*/
-  // var checkout = moltin.Checkout.Payment('purchase', order.id, {
-  //   data: {
-  //     number:       '4242424242424242',
-  //     expiry_month: '02',
-  //     expiry_year:  '2017',
-  //     cvv:          '123'
-  //   }
-  // });
-  // alert("Checkout");
+  /*convert cart to order*/
+  var order = moltin.Cart.Complete({
+    gateway: 'dummy',
+    customer: {
+      first_name: $("#firstname").val();,
+      last_name:  $("#secondname").val();,
+      email:      $("#email").val();
+    },
+    bill_to: {
+      first_name: 'David',
+      last_name:  'Ayre',
+      address_1:  '252 Nile Street',
+      address_2:  '',
+      city:       'Nelson',
+      county:     '',
+      country:    'NZ',
+      postcode:   '7010',
+      phone:      '+64-3-545-6169'
+    },
+    ship_to: 'bill_to',
+    shipping: 'free-shipping'
+  });
+  /*clear the cart*/
+  moltin.Cart.Delete();
+  /*add payment info to order*/
+  var checkout = moltin.Checkout.Payment('purchase', order.id, {
+    data: {
+      number:       '4242424242424242',
+      expiry_month: '02',
+      expiry_year:  '2017',
+      cvv:          '123'
+    }
+  });
+  alert("Checkout");
 }
 
 
