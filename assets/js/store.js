@@ -70,7 +70,7 @@ function checkoutMain(){
     customer: {
       first_name: $("#firstname").val();,
       last_name:  $("#secondname").val();,
-      email:      $("#email").val();
+      email:      $("#email").val()
     },
     bill_to: {
       first_name: 'David',
