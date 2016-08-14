@@ -73,15 +73,15 @@ function checkoutMain(){
       email:      $("#email").val()
     },
     bill_to: {
-      first_name: 'David',
-      last_name:  'Ayre',
-      address_1:  '252 Nile Street',
-      address_2:  '',
-      city:       'Nelson',
-      county:     '',
-      country:    'NZ',
-      postcode:   '7010',
-      phone:      '+64-3-545-6169'
+      first_name: $("#firstname").val(),
+      last_name:  $("#secondname").val(),
+      address_1:  $("#address1").val(),
+      address_2:  $("#address2").val(),
+      city:       $("#city").val(),
+      county:     $("#county").val(),
+      country:    $("#country").val(),
+      postcode:   $("#postcode").val(),
+      phone:      $("#phone").val()
     },
     ship_to: 'bill_to',
     shipping: 'free-shipping'
@@ -91,10 +91,10 @@ function checkoutMain(){
   /*add payment info to order*/
   var checkout = moltin.Checkout.Payment('purchase', order.id, {
     data: {
-      number:       '4242424242424242',
-      expiry_month: '02',
-      expiry_year:  '2017',
-      cvv:          '123'
+      number:       $("#cardnumber").val(),
+      expiry_month: $("#expirymonth").val(),
+      expiry_year:  $("#expiryyear").val(),
+      cvv:          $("#cvv").val()
     }
   });
   alert("End of checkoutMain");
