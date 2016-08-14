@@ -62,6 +62,7 @@ function checkout(){
   });
 }
 function checkoutMain(){
+  alert("Start of checkoutMain");
   /*convert cart to order*/
   var order = moltin.Cart.Complete({
     gateway: 'dummy',
