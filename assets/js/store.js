@@ -63,41 +63,41 @@ function checkout(){
   });
 }
 function checkoutMain(){
-  // alert("Start of checkoutMain");
-  // /*convert cart to order*/
-  // var order = moltin.Cart.Complete({
-  //   gateway: 'dummy',
-  //   customer: {
-  //     first_name: $("#firstname").val();,
-  //     last_name:  $("#secondname").val();,
-  //     email:      $("#email").val()
-  //   },
-  //   bill_to: {
-  //     first_name: 'David',
-  //     last_name:  'Ayre',
-  //     address_1:  '252 Nile Street',
-  //     address_2:  '',
-  //     city:       'Nelson',
-  //     county:     '',
-  //     country:    'NZ',
-  //     postcode:   '7010',
-  //     phone:      '+64-3-545-6169'
-  //   },
-  //   ship_to: 'bill_to',
-  //   shipping: 'free-shipping'
-  // });
-  // /*clear the cart*/
-  // moltin.Cart.Delete();
-  // /*add payment info to order*/
-  // var checkout = moltin.Checkout.Payment('purchase', order.id, {
-  //   data: {
-  //     number:       '4242424242424242',
-  //     expiry_month: '02',
-  //     expiry_year:  '2017',
-  //     cvv:          '123'
-  //   }
-  // });
-  // alert("End of checkoutMain");
+  alert("Start of checkoutMain");
+  /*convert cart to order*/
+  var order = moltin.Cart.Complete({
+    gateway: 'dummy',
+    customer: {
+      first_name: $("#firstname").val();,
+      last_name:  $("#secondname").val();,
+      email:      $("#email").val()
+    },
+    bill_to: {
+      first_name: 'David',
+      last_name:  'Ayre',
+      address_1:  '252 Nile Street',
+      address_2:  '',
+      city:       'Nelson',
+      county:     '',
+      country:    'NZ',
+      postcode:   '7010',
+      phone:      '+64-3-545-6169'
+    },
+    ship_to: 'bill_to',
+    shipping: 'free-shipping'
+  });
+  /*clear the cart*/
+  moltin.Cart.Delete();
+  /*add payment info to order*/
+  var checkout = moltin.Checkout.Payment('purchase', order.id, {
+    data: {
+      number:       '4242424242424242',
+      expiry_month: '02',
+      expiry_year:  '2017',
+      cvv:          '123'
+    }
+  });
+  alert("End of checkoutMain");
 }
 
 
