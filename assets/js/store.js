@@ -14,6 +14,7 @@ function addProductMain(productname, productnumber){
   alert("Item Added To Cart");
 }
 function createCart(){
+  alert("Start of createCart");
   moltin.Authenticate(function() {
     createCartMain();
   });
